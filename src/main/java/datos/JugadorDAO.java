@@ -12,9 +12,8 @@ public class JugadorDAO {
     private static final String SQL_UPDATE = "UPDATE carros_consola.ganadores SET   numero_victorias=?  WHERE nombre=?";
     private static final String SQL_DELETE = "DELETE FROM carros_consola.ganadores WHERE nombre=?";
 
-    public JugadorDAO(){
-        
-    }
+    public JugadorDAO(){        
+    }    
     
     public void desicion(Jugador jugador){
         Connection conn = null;
@@ -131,8 +130,7 @@ public class JugadorDAO {
         }
 
         return registros;
-    }
-    
+    }   
         public int eliminar(Jugador jugador) {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -152,7 +150,6 @@ public class JugadorDAO {
                 ex.printStackTrace(System.out);
             }
         }
-
         return registros;
     }
 }
