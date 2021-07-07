@@ -2,7 +2,7 @@
 package datos;
 
 import java.sql.*;
-import static datos.Conexcion.*;
+import static datos.Conexion.*;
 import domain.Jugador;
 
 public class JugadorDAO {
@@ -22,7 +22,7 @@ public class JugadorDAO {
         boolean bandera=false ;
         int numero_victorias=0;
         try {
-            conn = Conexcion.getConnection();
+            conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while (rs.next()) {
@@ -44,9 +44,9 @@ public class JugadorDAO {
             ex.printStackTrace(System.out);
         } finally {
             try {
-                Conexcion.close(rs);
-                Conexcion.close(stmt);
-                Conexcion.close(conn);
+                Conexion.close(rs);
+                Conexion.close(stmt);
+                Conexion.close(conn);
             } catch (SQLException ex) {
                 ex.printStackTrace(System.out);
             }
@@ -58,7 +58,7 @@ public class JugadorDAO {
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
-            conn = Conexcion.getConnection();
+            conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while (rs.next()) {
@@ -72,9 +72,9 @@ public class JugadorDAO {
             ex.printStackTrace(System.out);
         } finally {
             try {
-                Conexcion.close(rs);
-                Conexcion.close(stmt);
-                Conexcion.close(conn);
+                Conexion.close(rs);
+                Conexion.close(stmt);
+                Conexion.close(conn);
             } catch (SQLException ex) {
                 ex.printStackTrace(System.out);
             }
@@ -86,7 +86,7 @@ public class JugadorDAO {
         PreparedStatement stmt = null;
         int registros = 0;
         try {
-            conn = Conexcion.getConnection();
+            conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_INSERT);
             stmt.setString(1, jugador.getNombreJugador());            
             stmt.setInt(2, 1);
@@ -98,8 +98,8 @@ public class JugadorDAO {
             ex.printStackTrace(System.out);
         } finally {
             try {
-                Conexcion.close(stmt);
-                Conexcion.close(conn);
+                Conexion.close(stmt);
+                Conexion.close(conn);
             } catch (SQLException ex) {
                 ex.printStackTrace(System.out);
             }
@@ -112,7 +112,7 @@ public class JugadorDAO {
         PreparedStatement stmt = null;
         int registros = 0;
         try {
-            conn = Conexcion.getConnection();
+            conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_UPDATE);
             stmt.setInt(1, n_victo+1);
             stmt.setString(2, jugador.getNombreJugador());
@@ -122,8 +122,8 @@ public class JugadorDAO {
             ex.printStackTrace(System.out);
         } finally {
             try {
-                Conexcion.close(stmt);
-                Conexcion.close(conn);
+                Conexion.close(stmt);
+                Conexion.close(conn);
             } catch (SQLException ex) {
                 ex.printStackTrace(System.out);
             }
@@ -136,7 +136,7 @@ public class JugadorDAO {
         PreparedStatement stmt = null;
         int registros = 0;
         try {
-            conn = Conexcion.getConnection();
+            conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_DELETE);
             stmt.setString(1, jugador.getNombreJugador());
             registros = stmt.executeUpdate();
@@ -144,8 +144,8 @@ public class JugadorDAO {
             ex.printStackTrace(System.out);
         } finally {
             try {
-                Conexcion.close(stmt);
-                Conexcion.close(conn);
+                Conexion.close(stmt);
+                Conexion.close(conn);
             } catch (SQLException ex) {
                 ex.printStackTrace(System.out);
             }

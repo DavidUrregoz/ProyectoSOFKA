@@ -22,8 +22,7 @@ public class Podio {
     
     public void imprimirPodio(){
         for (int i = 0; i < puestos.size(); i++) {
-            System.out.println("Lugar #"+i+" : "+ puestos.get(i).getNombreJugador());    
-            
+            System.out.println("Lugar #"+(i+1)+" : "+ puestos.get(i).getNombreJugador());                
         }
     }       
 }

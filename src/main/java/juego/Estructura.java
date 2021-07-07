@@ -74,7 +74,7 @@ public class Estructura {
                             System.out.println("EL JUGADOR : " + turno.getNombreJugador() + " LLEGO A LA META ");
                             turno.setLlegada(true);
                             contador++;
-                            if (contador == 2) {
+                            if (contador == 3) {
                                 bandera = false;
                                 break;
                             }
